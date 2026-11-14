@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Electoral bonds, matched to companies</title>
+<meta property="og:title" content="Electoral bonds, matched to companies">
+<meta property="og:description" content="All 18,871 electoral bonds disclosed by SBI and the ECI in March 2024, each followed to the encashing party and matched to a registered company.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://electoral-bonds.shreyam.me/">
+<meta name="description" content="All 18,871 electoral bonds disclosed by SBI and the ECI in March 2024, each followed to the encashing party and matched to a registered company.">
+<style>
+@font-face { font-family: "Mona Sans"; src: url("fonts/MonaSans.woff2") format("woff2"); font-weight: 200 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Mona Sans"; src: url("fonts/MonaSans-Italic.woff2") format("woff2"); font-weight: 200 900; font-style: italic; font-display: swap; }
+body { max-width: 46em; margin: 2em auto; padding: 0 1em; font: 16px/1.55 "Mona Sans", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; color: #111; background: #fff; }
+h1 { font-size: 2em; margin-bottom: 0; }
+h2 { font-size: 1.3em; margin-top: 2em; }
+h3 { font-size: 1.05em; margin-bottom: 0.3em; }
+a { color: #0645ad; }
+table { border-collapse: collapse; margin: 1em 0; font-size: 0.9em; }
+th, td { padding: 3px 9px; text-align: left; vertical-align: top; }
+th { background: #eee; }
+td.n { text-align: right; font-variant-numeric: tabular-nums; }
+code, pre { font-family: Menlo, Consolas, "Courier New", monospace; font-size: 0.9em; }
+pre { background: #f4f4f4; padding: 0.6em; overflow-x: auto; }
+.sub { color: #555; margin-top: 0.2em; }
+.scroll { overflow-x: auto; }
+</style>
+</head>
+<body>
+
+<h1>Electoral bonds, matched to companies</h1>
+<p class="sub">Every bond SBI disclosed in March 2024, tied to the company that bought it and the party that cashed it</p>
+
+<p>
+In March 2024, after the Supreme Court struck down the electoral bond scheme, the State Bank of India had to hand over the details of every bond it had sold and every bond a political party had cashed. The Election Commission put them up as two long PDFs. Because both lists carry the bond number, a purchase can be followed to the party that encashed it.
+</p>
+<p>
+What the PDFs do not tell you is which company is behind a name. SBI printed the names as they sat in its system, and the printout cuts them off at about 35 characters. <code>FUTURE GAMING AND HOTEL SERVICES PR</code> and <code>FUTURE GAMING AND HOTEL SERVICES PVT LTD</code> are the same company, and so is a third spelling, but nothing in the PDF says so. Add the three up and you get &#8377;1,368 crore, the figure that was widely reported. Look at any one of them alone and you do not.
+</p>
+<p>
+This release ties each purchaser name to a company registration number (CIN) from the Ministry of Corporate Affairs register, and it does so only when exactly one company fits. When two companies could fit, the name is left unmatched and the reason is written next to it. I would much rather leave a name blank than attach it to the wrong company.
+</p>
+<p>
+The same matching was run on three small mining records: MSTC's mineral block auction results, the Ministry of Coal's list of coal mine allocations, and Odisha's register of mining leases. They are in this release too.
+</p>
+<p>
+This is part of a larger effort of mine to make the money side of Indian public life easier to read, from tenders (<a href="https://project-diaphanum.shreyam.me/">Project Diaphanum</a>) to party funding. The bonds were the natural place to test the matching, because the totals are already known and anything wrong would show.
+</p>
+
+<h2>Download</h2>
+<p>
+Plain CSV files, UTF-8, with a header row.<br>
+<a href="https://huggingface.co/datasets/shreyamm/electoral-bonds-and-mining-resolved">Hugging Face dataset &rarr;</a>
+</p>
+<div class="scroll"><table>
+<tr><th>File</th><th>Holds</th><th>Rows</th><th>Size</th><th>SHA-256</th></tr>
+<tr><td><a href="https://huggingface.co/datasets/shreyamm/electoral-bonds-and-mining-resolved/resolve/main/data/electoral_bonds.csv">electoral_bonds.csv</a></td><td>One row per bond: date, number, value, purchaser as printed, the party that encashed it, and the company where matched</td><td class="n">18,871</td><td class="n">3.3 MB</td><td><code>13679d814ee831b32cdd1ac177afb9b4f7fec5b06d5bd99685ae98120c47815c</code></td></tr>
+<tr><td><a href="https://huggingface.co/datasets/shreyamm/electoral-bonds-and-mining-resolved/resolve/main/data/bond_buyers_by_company.csv">bond_buyers_by_company.csv</a></td><td>One row per matched company, with all its spellings folded together</td><td class="n">624</td><td class="n">104 KB</td><td><code>b9650b1132a965cc212fa859ccb6aa42e113dc4140cfecaf2c7c75645138e062</code></td></tr>
+<tr><td><a href="https://huggingface.co/datasets/shreyamm/electoral-bonds-and-mining-resolved/resolve/main/data/bond_flows_by_company_and_party.csv">bond_flows_by_company_and_party.csv</a></td><td>Purchaser name &times; party, with bonds and rupees</td><td class="n">1,689</td><td class="n">175 KB</td><td><code>05527afcaabea48c6630b5fa00eebd72d7f4f1e5312294c0724c9b8691e944b0</code></td></tr>
+<tr><td><a href="https://huggingface.co/datasets/shreyamm/electoral-bonds-and-mining-resolved/resolve/main/data/bond_purchaser_resolution.csv">bond_purchaser_resolution.csv</a></td><td>Every purchaser name and what the matching did with it</td><td class="n">1,316</td><td class="n">108 KB</td><td><code>c9438846a6c77f5699a95ee81f97a067c1b51d8b221be150c7d7507bed31d89a</code></td></tr>
+<tr><td><a href="https://huggingface.co/datasets/shreyamm/electoral-bonds-and-mining-resolved/resolve/main/data/mineral_block_auctions.csv">mineral_block_auctions.csv</a></td><td>MSTC auction results, with the matched company</td><td class="n">280</td><td class="n">73 KB</td><td><code>37de03fe2c2d434eb7289bc5f07b01c31d48c09a0ec8a4c343a5924237db2183</code></td></tr>
+<tr><td><a href="https://huggingface.co/datasets/shreyamm/electoral-bonds-and-mining-resolved/resolve/main/data/coal_block_allocations.csv">coal_block_allocations.csv</a></td><td>Coal mine allocations, with the matched company</td><td class="n">178</td><td class="n">30 KB</td><td><code>e54d7ff4cf03eee24be71d2b8cf91a44a17c430aa264dc9ab34a175eed5a09da</code></td></tr>
+<tr><td><a href="https://huggingface.co/datasets/shreyamm/electoral-bonds-and-mining-resolved/resolve/main/data/odisha_mining_leases.csv">odisha_mining_leases.csv</a></td><td>Odisha lessee register, with the matched company</td><td class="n">212</td><td class="n">29 KB</td><td><code>2fc8808787593b578acf07970a38dd2f6994b372ea37e8d125e6338386fdbf84</code></td></tr>
+<tr><td><a href="https://huggingface.co/datasets/shreyamm/electoral-bonds-and-mining-resolved/resolve/main/data/mining_firm_resolution.csv">mining_firm_resolution.csv</a></td><td>Every mining firm name and what the matching did with it</td><td class="n">414</td><td class="n">30 KB</td><td><code>894de00d2f89a96e94c2911a8676f91404f82522f845f45503cc1a09d95b3280</code></td></tr>
+</table></div>
+<p>The full method, with every rule and every column, is in <a href="https://huggingface.co/datasets/shreyamm/electoral-bonds-and-mining-resolved/blob/main/METHODOLOGY.md">METHODOLOGY.md</a>.</p>
+
+<h3>Quick start</h3>
+<pre>import duckdb
+duckdb.sql("""
+  SELECT registered_name, round(total_rs / 1e7, 1) AS crore
+  FROM read_csv('hf://datasets/shreyamm/electoral-bonds-and-mining-resolved/data/bond_buyers_by_company.csv')
+  ORDER BY total_rs DESC LIMIT 10
+""").show()</pre>
+
+<h2>What is in it</h2>
+<div class="scroll"><table>
+<tr><th></th><th>Count</th></tr>
+<tr><td>Bonds bought (12 April 2019 to 11 January 2024)</td><td class=n>18,871</td></tr>
+<tr><td>Value of those bonds</td><td class=n>&#8377;12,155.5 crore</td></tr>
+<tr><td>Bonds followed to the party that encashed them</td><td class=n>18,741</td></tr>
+<tr><td>Purchaser names as printed by SBI</td><td class=n>1,316</td></tr>
+<tr><td>Names matched to exactly one company or LLP</td><td class=n>688</td></tr>
+<tr><td>Distinct companies those names belong to</td><td class=n>624</td></tr>
+<tr><td>Value bought by matched companies</td><td class=n>&#8377;10,057.9 crore (83%)</td></tr>
+<tr><td>MSTC mineral auction results</td><td class=n>280</td></tr>
+<tr><td>Coal mine allocations</td><td class=n>178</td></tr>
+<tr><td>Odisha mining leases</td><td class=n>212</td></tr>
+</table></div>
+
+<h3>Largest buyers, all spellings counted together</h3>
+<div class="scroll"><table>
+<tr><th>Company</th><th>Spellings</th><th>Bonds</th><th>&#8377; crore</th></tr>
+<tr><td>FUTURE GAMING AND HOTEL SERVICES PRIVATE LIMITED</td><td class=n>3</td><td class=n>1,368</td><td class=n>1,368.0</td></tr>
+<tr><td>MEGHA ENGINEERING &amp; INFRASTRUCTURES LIMITED</td><td class=n>3</td><td class=n>966</td><td class=n>966.0</td></tr>
+<tr><td>QWIK SUPPLY CHAIN PRIVATE LIMITED</td><td class=n>1</td><td class=n>410</td><td class=n>410.0</td></tr>
+<tr><td>VEDANTA LIMITED</td><td class=n>2</td><td class=n>429</td><td class=n>400.6</td></tr>
+<tr><td>HALDIA ENERGY LIMITED</td><td class=n>1</td><td class=n>395</td><td class=n>377.0</td></tr>
+<tr><td>ESSEL MINING &amp; INDUSTRIES LTD.</td><td class=n>1</td><td class=n>238</td><td class=n>224.5</td></tr>
+<tr><td>WESTERN U. P. POWER TRANSMISSION COMPANY LIMITED</td><td class=n>1</td><td class=n>220</td><td class=n>220.0</td></tr>
+<tr><td>MKJ ENTERPRISES LTD</td><td class=n>2</td><td class=n>324</td><td class=n>192.4</td></tr>
+<tr><td>MADANLAL LTD</td><td class=n>1</td><td class=n>199</td><td class=n>185.5</td></tr>
+<tr><td>BHARTI AIRTEL LIMITED</td><td class=n>1</td><td class=n>183</td><td class=n>183.0</td></tr>
+<tr><td>UTKAL ALUMINA INTERNATIONAL LIMITED.</td><td class=n>2</td><td class=n>148</td><td class=n>145.3</td></tr>
+<tr><td>DLF COMMERCIAL DEVELOPERS LIMITED</td><td class=n>1</td><td class=n>130</td><td class=n>130.0</td></tr>
+<tr><td>JINDAL STEEL LIMITED</td><td class=n>1</td><td class=n>123</td><td class=n>123.0</td></tr>
+<tr><td>B. G. SHIRKE CONSTRUCTION TECHNOLOGY PRIVATE LIMITED</td><td class=n>2</td><td class=n>123</td><td class=n>118.5</td></tr>
+<tr><td>DHARIWAL INFRASTRUCTURE LIMITED</td><td class=n>1</td><td class=n>115</td><td class=n>115.0</td></tr>
+</table></div>
+
+<h2>How names were matched</h2>
+<p>
+Each name is cleaned up first: upper case, punctuation dropped, PRIVATE and LIMITED shortened to PVT and LTD, a leading M/S removed. A second, letters-only form takes care of SBI's line breaks, which turn <code>LIMITED</code> into <code>LI MITED</code>. Then the rules below are tried in order, and the first one that finds exactly one company wins.
+</p>
+<ol>
+<li><b>Same name</b> as one registered company.</li>
+<li><b>Same name once spacing, punctuation and abbreviations are ignored</b>. If this finds more than one company, the name is refused right here.</li>
+<li><b>A former name</b> of one company, as recorded by <a href="https://www.gleif.org/">GLEIF</a>. This catches companies that bought bonds under an old name.</li>
+<li><b>Same name as one LLP</b>.</li>
+<li><b>A name SBI cut short</b>, if it is long enough and only one registered name starts with it.</li>
+<li><b>Same name with a different legal form</b> (Ltd for Pvt Ltd), but only when the name has at least two words that are not generic like <i>Industries</i> or <i>Infra</i>.</li>
+</ol>
+<p>
+A match is also thrown out if GLEIF shows that the name used to belong to a <i>different</i> company. &ldquo;Tata Motors Ltd&rdquo; is the old name of one company and the current name of another, so a name like that cannot be placed in time without more information.
+</p>
+<p>
+Some large names stay unmatched for this reason. Torrent Power, Zydus Healthcare and Piramal Enterprises each have more than one record in the register under the same name. A reporter can settle these from the company's annual report in a few minutes, but a rule should not guess.
+</p>
+
+<h2>How it was checked</h2>
+<ul>
+<li><b>Against the PDFs.</b> All 18,871 purchase rows and 20,421 encashment rows were read, the serial numbers run without a gap, and the totals match SBI's (&#8377;12,155.51 crore bought, &#8377;12,769.09 crore encashed).</li>
+<li><b>Against someone else's reading.</b> The table extraction was compared row by row with the open-source extraction at <a href="https://github.com/pushkar8723/electoral-bonds">pushkar8723/electoral-bonds</a>. There were no differences.</li>
+<li><b>Against known figures.</b> Company totals after folding spellings match what was reported: Future Gaming &#8377;1,368 crore, Megha Engineering &#8377;966 crore.</li>
+<li><b>Nothing dropped.</b> Every bond is in the main file, matched or not.</li>
+<li><b>Blind checks.</b> Samples of matches were checked against the register by someone who could not see the answer. One rule failed (it picked the wrong company in 3 of 20 cases) and was removed.</li>
+</ul>
+
+<h2>Limitations of this release</h2>
+<ul>
+<li>SBI's purchase list starts on 12 April 2019. 1,680 bonds worth &#8377;623 crore were encashed in April 2019 but bought earlier, so they are not here.</li>
+<li>&ldquo;Unmatched&rdquo; does not mean an individual. It can be a misspelling, a name cut too short, or a name two companies share.</li>
+<li>Company status and state are from the register as of September 2026, not the date of purchase.</li>
+<li>Groups are not joined up. A parent and its subsidiaries are separate rows.</li>
+<li>Mining covers MSTC, the Ministry of Coal and Odisha only. Other states have no public lease list that I could reach.</li>
+<li>Buying a bond was legal at the time. Nothing in this data shows or suggests wrongdoing by anyone.</li>
+</ul>
+
+
+
+
+</body>
+</html>
